@@ -1,0 +1,70 @@
+icinga-dashing Funktionsdokumentation
+
+get_stats()
+  gibt icinga Statistiken zurück
+
+get_app()
+
+get_hosts()
+  gibt alle hosts zurück
+  
+get_host("host")
+  gibt icinga Daten eines bestimmten Hosts zurück. Es muss der Hostname übergeben werden
+
+get_host_status("host")
+   gibt den dashing status von einem host inkl. aller zugeordneten Services zurück. Es muss der Hostname übergeben werden
+   
+get_host_status_id("host")
+   gibt den icinga status von einem host inkl. aller zugeordneten Services zurück. Es muss der Hostname übergeben werden
+
+get_host_group("hostgroup")
+  gibt icinga Daten von allen Hosts in der angegebenen Hostgruppe zurück
+  
+get_host_group_status("hostgroup")
+  gibt den Gesamtstatus von einer Hostgruppe inklusive der zugeordneten Services zurück
+
+get_services()
+  gibt alle Services zurück
+  
+get_service("host","service",optional:datatype)
+  gibt die icinga Daten von einem bestimmten Service zurück. Datatype = 1 gibt icinga status id zurück, 2 den Dashing Status, alles andere die kompletten Servicedaten
+  
+get_host_services("host")
+  gibt die icinga Daten von allen Services zurück, die dem angegebenen Hosts zugeordnet sind
+  
+count_problems("object")
+  gibt die Anzahl der Services zurück die nicht ok sind
+
+parse_icinga_check_data("data")
+  interne Funktion, die das Ausgabearray verkleinert
+
+parse_icinga_perfdata("perfdata")
+  gibt die Performancedaten als Array zurück
+  
+create_item_list(items)
+  erstellt eine Liste für Dashing inkl. Status Icons, bzw. Statuswerte und gibt sie zurück
+  
+get_list_status("items")
+  gibt den Gesamtstatus für eine Liste zurück
+
+get_status(state,oldstate="normal")
+  macht aus dem icinga Status einen Dashing Status und gibt ihn zurück. Der Status wird dabei sortiert
+  
+get_perfdata_status(perfdata)
+  Berechnet aus den Performancedaten den Status anhand der Maximalwerte und gibt ihn zurück
+
+get_icinga_perfdata("host","service",id,optional:datatype)
+  gibt direkt die performancedaten zurück. Die ID muss angegeben werden, wenn nicht die ersten Performancedaten benötigt werden. datatype (0,1,2) bestimmt, ob ein array inkl. max, min, warn und crit Werte zurück gegeben wird, 
+  nur der aktuelle Wert. oder ein array mit service status und dem aktuellen wert
+  
+get_group_status(group)
+  gibt den Gesamtstatus einer Service oder Hostgruppe zurück
+
+get_group_status_id(group)
+  interne Funktion um die Icinga Status ID von einer Gruppe zu bekommen
+  
+set_graph_point(y,service)
+  erstellt x und y punkte aus den Performancedaten des angegebenen Services und speichert sie in eine xml-Datei. Daten die älter als 1 Tag sind, werden aus der xml-Datei gelöscht. x-Wert ist der aktuelle Timestamp
+  
+get_graph_points(service,seconds)
+  liest die Werte aus der xml-Datei die mit set_graph_point geschrieben wurde. seconds gibt an, wie lange die geholten Werte zurück reichen sollen. Gibt ein Array für den Graphen zurück
