@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------------
 // Sass declarations
 // ----------------------------------------------------------------------------
-$background-color:  #12b0c5;
+$background-color:  #12b554;
 $value-color:       #fff;
 
 $title-color:       rgba(255, 255, 255, 0.7);
@@ -21,7 +21,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   }
 
   ol, ul {
-    margin: 0 5px;
+    margin: 0 15px;
     text-align: left;
     color: $label-color;
   }
@@ -40,14 +40,12 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 
   .label {
     color: $label-color;
-    font-size: 15px;
   }
 
   .value {
     float: right;
-    margin-left: 10px;
-    font-weight: 500;
-    font-size: 15px;
+    margin-left: 12px;
+    font-weight: 600;
     color: $value-color;
   }
 
@@ -59,20 +57,4 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
     color: $moreinfo-color;
   }
 
-  .green {
-    color: #44bb77;
-    font-size: 15px;
-  }
-  .yellow {
-    color: #ffaa44;
-    font-size: 15px;
-  }
-  .red {
-    color: #ff5566;
-    font-size: 15px;
-  }
-  .purple {
-    color: #aa44ff;
-    font-size: 15px;
-  }
 }
