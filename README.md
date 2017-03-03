@@ -1,17 +1,5 @@
 # Dashing with Icinga 2
 
-#### Table of Contents
-
-1. [Introduction](#introduction)
-3. [License](#license)
-4. [Requirements](#requirements)
-4. [Installation](#installation)
-5. [Configuration](#configuration)
-6. [Run](#run)
-7. [Thanks](#thanks)
-8. [Troubleshooting](#troubleshooting)
-9. [Development](#development)
-
 ## Introduction
 
 [Dashing](http://shopify.github.io/dashing/) is a Sinatra based framework
